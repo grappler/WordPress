@@ -176,6 +176,10 @@ function has_shortcode( $content, $tag ) {
  */
 function do_shortcode( $content, $ignore_html = false ) {
 	global $shortcode_tags;
+	
+	if ( ! is_string( $content ) ) {
+		var_dump($content);
+	}
 
 	if ( false === strpos( $content, '[' ) ) {
 		return $content;
